@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background:#F2F4F4 ;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #5DADE2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+           transform: scale(1.05); 
+        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ nav {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+ justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color:#333;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-size: 1.5em;
+}
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;
+        max-width: 95%;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    nav li {
+        display: block;
+        margin: 0 0 10px 0;
+    }
+    nav img {
+        margin-bottom: 10px;
+        max-width: 120px;
+        height: auto;
+    }
+}
+  </style>
+</head>
+<header>
+    <nav>
+    <img style="width: 60px; height: 60px;"src="photo/croix-medicale-vectorielle-conception-du-logo-hopital.png" alt="Logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Centre d'aide</a></li>
+      <li><a href="register.html">S'inscrire</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+    </ul>
+    
+  </nav>
+</header>
+<body>
+    <div class="container">
+        <h2>Prendre un rendez-vous</h2>
+        <form action="traitement.php" method="POST">
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="medecin">Choisissez un médecin :</label>
+            <select id="medecin" name="medecin" required>
+              <option value="">-- Sélectionnez --</option>
+              <option value="dr_smith">Dr. Claire-bernard</option>
+              <option value="dr_durand">Dr. Marie-dupont</option>
+              <option value="dr_lee">Dr. Jean-martin</option>
+            </select>
+
+            <label for="email">Adresse email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" required>
+
+            <label for="date">Date souhaitée :</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="heure">Heure souhaitée :</label>
+            <input type="time" id="heure" name="heure" required>
+
+            <label for="motif">Motif du rendez-vous :</label>
+            <textarea id="motif" name="motif" rows="4" placeholder="Ex: consultation, suivi de grossesse, douleur, etc." required></textarea>
+
+            <button type="submit">Envoyer la demande</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Emploi du temps du médecin</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td {
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Emploi du temps du Dr. Marie-dupont</h2>
+  <div id="emploi-du-temps"></div>
+
+  <script>
+    const joursTravail = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi"];
+    const horaireDebut = 9; // 9h
+    const horaireFin = 17; // 17h
+    const pasMinutes = 30;
+
+    const patientSimules = [
+      "Mme Lilia", "Mme Sarah", "M. Amine", "Mme Inès", "M. Karim", "Mme Djamila"
+    ];
+
+    function genererHoraires(debut, fin, pas) {
+      const heures = [];
+      for (let h = debut; h < fin; h++) {
+        for (let m = 0; m < 60; m += pas) {
+          const heureStr = `${String(h).padStart(2, '0')}h${String(m).padStart(2, '0')}`;
+          heures.push(heureStr);
+        }
+      }
+      return heures;
+    }
+
+    function simulerPlanning(heures, jours) {
+      const planning = {};
+      for (let h of heures) {
+        planning[h] = {};
+        for (let j of jours) {
+          // 50% de chance d'avoir un patient
+          if (Math.random() < 0.3) {
+            const nom = patientSimules[Math.floor(Math.random() * patientSimules.length)];
+            planning[h][j] = nom;
+          } else {
+            planning[h][j] = "";
+          }
+        }
+      }
+      return planning;
+    }
+
+    function afficherEmploiDuTemps(jours, heures, planning) {
+      const table = document.createElement("table");
+
+      // En-tête
+      let thead = "<tr><th>Heure</th>";
+      for (let j of jours) {
+        thead += `<th>${j}</th>`;
+      }
+      thead += "</tr>";
+      table.innerHTML += thead;
+
+      // Corps du tableau
+      for (let h of heures) {
+        let row = `<tr><td>${h}</td>`;
+        for (let j of jours) {
+          row += `<td>${planning[h][j] || ""}</td>`;
+        }
+        row += "</tr>";
+        table.innerHTML += row;
+      }
+
+      document.getElementById("emploi-du-temps").appendChild(table);
+    }
+
+    // Simulation
+    const heures = genererHoraires(horaireDebut, horaireFin, pasMinutes);
+    const planning = simulerPlanning(heures, joursTravail);
+    afficherEmploiDuTemps(joursTravail, heures, planning);
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:#ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #f2f4f4;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #5DADE2;
+      color:#333;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      font-size: 1.5em;
+    }
+    .message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+     nav {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+ justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color:#333;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-size: 1.5em;
+}
+  </style>
+</head>
+<header>
+    <nav>
+    <img style="width: 60px; height: 60px;"src="photo/croix-medicale-vectorielle-conception-du-logo-hopital.png" alt="Logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Centre d'aide</a></li>
+      <li><a href="register.html">S'inscrire</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+    </ul>
+    
+  </nav>
+</header>
+<body>
+  <div class="container">
+    <h2>Connexion</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+    <div class="message" id="message"></div>
+  </div>
+</body>
+</html>
