@@ -3,109 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylenavbar.css">
   <title>Document</title>
-  <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color:#fff;
-            padding: 20px;
-        }
-        .container {
-            max-width: 500px;
-            margin: auto;
-            background:#F2F4F4 ;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-top: 15px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            margin-top: 20px;
-            width: 100%;
-            padding: 12px;
-            background-color: #5DADE2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-           transform: scale(1.05); 
-        }
-        * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
- nav {
-  color: #fff;
-  padding: 1rem;
-  display: flex;
- justify-content: space-between;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav li {
-  display: inline;
-  margin-right: 1rem;
-}
-
-nav a {
-  color:#333;
-  text-decoration: none;
-}
-
-nav a:hover {
-  font-size: 1.5em;
-}
-@media (max-width: 700px) {
-    .container {
-        padding: 10px;
-        max-width: 95%;
-    }
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: 10px;
-    }
-    nav li {
-        display: block;
-        margin: 0 0 10px 0;
-    }
-    nav img {
-        margin-bottom: 10px;
-        max-width: 120px;
-        height: auto;
-    }
-}
-  </style>
 </head>
+<body>
 <header>
     <nav>
     <img style="width: 60px; height: 60px;"src="photo/croix-medicale-vectorielle-conception-du-logo-hopital.png" alt="Logo">
@@ -118,7 +19,7 @@ nav a:hover {
     
   </nav>
 </header>
-<body>
+
     <div class="container">
         <h2>Prendre un rendez-vous</h2>
         <form action="traitement.php" method="POST">
@@ -150,5 +51,6 @@ nav a:hover {
             <button type="submit">Envoyer la demande</button>
         </form>
     </div>
+
 </body>
 </html>

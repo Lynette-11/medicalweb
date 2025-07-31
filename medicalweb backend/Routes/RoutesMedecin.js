@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Medecin = require('../models/Medecin');
+const RendezVous = require('../models/RendezVous');
+const Patient = require('../models/Patient');
 
 const bcrypt = require('bcrypt');
 
@@ -58,25 +60,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-// GET /medecins/:id/planning
-router.get('/medecins/:id/planning', async (req, res) => {
-  const { id } = req.params;
-  const medecin = await Medecin.findById(id);
-  if (!medecin) return res.status(404).json({ error: 'Médecin introuvable' });
 
-  // ici tu récupères les rendez-vous de la base (tu peux les simuler d’abord)
-  const planning = [
-    { jour: "Dimanche", heure: "09h00", patient: "Mme Lilia" },
-    { jour: "Mardi", heure: "10h30", patient: "M. Amine" },
-  ];
-
-  res.json({
-    nom: medecin.nom,
-    jours: medecin.jours,
-    horaires: medecin.horaires,
-    planning
-  });
-});
 
 
 

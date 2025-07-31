@@ -1,0 +1,82 @@
+
+        .container {
+            
+            max-width: 500px;
+            margin: auto;
+            background:#F2F4F4 ;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #00acd8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+           transform: scale(1.05); 
+        }
+        
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ nav {
+  top: 0%;
+  width: 100%;
+  color: #333;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0A436A;
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 80px;
+}
+nav img {
+  height: 50px;
+  margin-right: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+
+}
+section div {
+  gap: 20px;
+}
